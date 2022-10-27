@@ -6,7 +6,7 @@ key = "AyRhfyHs9PM5gRGGoct61Xt40AyL9FiY"
 def convertDistance(amount):
     #Meter to Miles
     return amount/1609 
-dataType = 0
+dataType = 1
 
 while True:
     orig = input("Starting Location: ")
