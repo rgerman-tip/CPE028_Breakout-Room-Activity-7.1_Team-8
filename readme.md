@@ -8,7 +8,7 @@ Feature enhancements of the Lab 4.9.2 code
 The added features are:
 
 <ul>
-    <li>Kivy GUI integration
+    <li>KivyMD GUI integration
     <li>Meter/Miles option
 </ul>
 </h3>

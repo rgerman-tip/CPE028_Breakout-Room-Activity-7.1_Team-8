@@ -36,7 +36,16 @@ while True:
                 print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) +"    km)"))
             print("=============================================\n")
         else:
-            break
+            print("API Status: " + str(json_status) + " = A successful route call.\n")
+            print("=============================================")
+            print("Directions from " + (orig) + " to " + (dest))
+            print("Trip Duration:   " + (json_data["route"]["formattedTime"]))
+            print("Miles:      " + str("{:.2f}".format(convertDistance((json_data["route"]["distance"])*1.61))))
+            print("=============================================")
+            for each in json_data["route"]["legs"][0]["maneuvers"]:
+                print((each["narrative"]) + " (" + str("{:.2f}".format(convertDistance((each["distance"])*1.61) +"    km)")))
+            print("=============================================\n")
+
            
     if json_status == 402: 
         print("**********************************************")
@@ -51,6 +60,5 @@ while True:
         print("For Staus Code: " + str(json_status) + "; Refer to:")
         print("https://developer.mapquest.com/documentation/directions-api/status-codes")
         print("************************************************************************\n")
-    print(json_data["route"].keys())
 
 
