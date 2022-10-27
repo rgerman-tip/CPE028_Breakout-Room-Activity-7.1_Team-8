@@ -31,6 +31,8 @@ while True:
             print("Directions from " + (orig) + " to " + (dest))
             print("Trip Duration:   " + (json_data["route"]["formattedTime"]))
             print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
+            #Added information
+            print("Mode of Transportation: " + (json_data["route"]["legs"][0]["maneuvers"][0]["transportMode"]))
             print("=============================================")
             for each in json_data["route"]["legs"][0]["maneuvers"]:
                 print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) +"    km)"))
