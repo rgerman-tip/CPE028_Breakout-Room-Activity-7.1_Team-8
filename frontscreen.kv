@@ -1,22 +1,35 @@
+# Main Kivy Screen For Inputs
 <Front@Screen>:
     name: 'front'
+    FitImage:
+        source: "mapbg.jpg"
+    MDCard:
+        md_bg_color: rgba(122, 122, 121,178)
+        radius: (0)
+    FitImage:
+        source: "mapquestlogo.png"
+        size_hint: .175, .175
+        pos_hint: {'center_x': 0.5,'center_y': 0.96}
     FloatLayout:
         MDLabel:
             text: 'MAPQUESTGUI'
             font_size: 0.1 * self.height
             halign: 'center'
             font_name: 'Nunito'
+            color: 1,1,1,1
             pos_hint: {'center_x': .5,'center_y': 0.875}
         MDLabel:
             text: 'ORIGIN:'
             font_size: 0.05 * self.height
             font_name: 'Nunito'
             halign: 'center'
+            color: 1,1,1,1
             pos_hint: {'center_x': .25,'center_y': 0.7}
         MDLabel:
             text: 'DESTINATION:'
             font_size: 0.05 * self.height
             font_name: 'Nunito'
+            color: 1,1,1,1
             halign: 'center'
             pos_hint: {'center_x': .215,'center_y': 0.5}
 
@@ -32,7 +45,7 @@
                 hint_text_color: "3b4949"
                 cursor_color: "3b4949"
                 halign: "left"
-                foreground_color: "3b4949"
+                foreground_color: 1,1,1,1
                 background_normal: ""
                 background_active: ""
                 background_color: (0,0,0,0)
@@ -50,7 +63,7 @@
                 hint_text_color: "3b4949"
                 cursor_color: "3b4949"
                 halign: "left"
-                foreground_color: "3b4949"
+                foreground_color: 1,1,1,1
                 background_normal: ""
                 background_active: ""
                 background_color: (0,0,0,0)
@@ -59,16 +72,16 @@
 
         MDLabel:
             text: 'change to miles?'
-            font_size: 0.05 * self.height
+            font_size: 0.0375 * self.height
             font_name: 'Nunito'
             halign: 'center'
-            pos_hint: {'center_x': .405,'center_y': 0.4}
+            pos_hint: {'center_x': .375,'center_y': 0.42}
 
         MDCheckbox:
             id: box
             size_hint: None, None
             size: "48dp", "48dp"
-            pos_hint: {'center_x': .53, 'center_y': .4}
+            pos_hint: {'center_x': .473, 'center_y': .42}
         
         Button:
             id: Calculate
@@ -88,7 +101,21 @@
                     size: self.size
                     pos: self.pos
                     radius: [3]
-            
+
+        MDLabel:
+            text: 'BY TEAM 8'
+            font_size: 0.03 * self.width
+            font_name: 'Nunito'
+            halign: 'center'
+            color: 1,1,1,1
+            pos_hint: {'center_x': .5,'center_y': 0.125}
+        MDLabel:
+            text: 'Besagas | Cruz | Dela Soledad | German'
+            font_size: 0.02 * self.width
+            font_name: 'Nunito'
+            halign: 'center'
+            color: 1,1,1,1
+            pos_hint: {'center_x': .5,'center_y': 0.075}
         
 <CustomCard@MDCard>:
     md_bg_color: 0,0,0,0

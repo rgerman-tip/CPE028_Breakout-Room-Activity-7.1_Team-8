@@ -1,12 +1,31 @@
+# Main Kivy Screen For Ouput Display
 <Output@Screen>:
     name: 'output'
+    FitImage:
+        source: "mapbg.jpg"
+    MDCard:
+        md_bg_color: rgba(122, 122, 121,178)
+        radius: (0)
+    FitImage:
+        source: "mapquestlogo.png"
+        size_hint: .175, .175
+        pos_hint: {'center_x': 0.5,'center_y': 0.96}
+    FloatLayout:
+        MDLabel:
+            text: 'MAPQUESTGUI'
+            font_size: 0.1 * self.height
+            halign: 'center'
+            font_name: 'Nunito'
+            color: 1,1,1,1
+            pos_hint: {'center_x': .5,'center_y': 0.875}
     BoxLayout:
-        size_hint: .9,.75
-        pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        size_hint: .9,.65
+        pos_hint: {'center_x': 0.5,'center_y': 0.475}
         ScrollView:
             MDLabel:
                 id: textoutput
                 text: "TESTINGS"
+                color: 1,1,1,1
                 halign: "left"
                 pos_hint: {'center_x': 0.5,'center_y': 0.5}
                 adaptive_height:True
@@ -18,7 +37,7 @@
         font_name: 'Nunito'
         font_size: '18'
         size_hint: .25, .065
-        pos_hint: {'center_x': .5,'center_y': 0.1}
+        pos_hint: {'center_x': .5,'center_y': 0.075}
         background_color: (0,0,0,0)
         on_release: app.root.current = 'front'
         canvas.before:
