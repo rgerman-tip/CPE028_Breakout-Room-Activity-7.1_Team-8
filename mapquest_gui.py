@@ -10,34 +10,25 @@ def convertDistance(amount):
     #Meter to Miles
     return amount/1609 
 dataType = 1
-def conversionFunc(origin,dest,datatype):
+def conversionFunc(origin,dest,state):
     url = main_api + urllib.parse.urlencode({"key": key, "from":origin, "to":dest})
     print("URL: " + (url))
     json_data = requests.get(url).json()
     json_status = json_data["info"]["statuscode"]
-
+    temp = []
     if json_status == 0:
-        if dataType == 1:
-            print("API Status: " + str(json_status) + " = A successful route call.\n")
-            print("=============================================")
-            print("Directions from " + (origin) + " to " + (dest))
-            print("Trip Duration:   " + (json_data["route"]["formattedTime"]))
-            print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
-            print("=============================================")
+        if state != 'down':
             for each in json_data["route"]["legs"][0]["maneuvers"]:
-                print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) +"    km)"))
+                temp.append(each["narrative"])
+            x = "\n".join(temp)
+            print(x)
+            output = "API Status: " + str(json_status) + " = A successful route call.\n" + "Directions from " + (origin) + " to " + (dest) + "\n" + "Trip Duration: " + (json_data["route"]["formattedTime"]) + "\n" + "Kilometers: " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)) + "\n\nDIRECTION\n\n" + x
         else:
-            print("API Status: " + str(json_status) + " = A successful route call.\n")
-            print("=============================================")
-            print("Directions from " + (origin) + " to " + (dest))
-            print("Trip Duration:   " + (json_data["route"]["formattedTime"]))
-            print("Miles:      " + str("{:.2f}".format(convertDistance((json_data["route"]["distance"])*1.61))))
-            print("=============================================")
             for each in json_data["route"]["legs"][0]["maneuvers"]:
-                print((each["narrative"]) + " (" + str("{:.2f}".format(convertDistance((each["distance"])*1.61) +"    km)")))
-            print("=============================================\n")
+                temp.append(each["narrative"])
+            x = "\n".join(temp)
+            output = "API Status: " + str(json_status) + " = A successful route call.\n" + "Directions from " + (origin) + " to " + (dest) + "\n" + "Trip Duration: " + (json_data["route"]["formattedTime"]) + "\n" + "Miles:      " + str("{:.2f}".format(convertDistance((json_data["route"]["distance"])*1.61))) + "\n\nDIRECTION\n\n" + x
 
-           
     if json_status == 402: 
         print("**********************************************")
         print("Status Code: " + str(json_status) + "; Invalid user inputs for one or both locations.")
@@ -52,6 +43,7 @@ def conversionFunc(origin,dest,datatype):
         print("https://developer.mapquest.com/documentation/directions-api/status-codes")
         print("************************************************************************\n")
 
+    return output
 
 
 LabelBase.register(name = "Nunito", fn_regular= "BebasNeue-Regular.otf")
@@ -60,19 +52,9 @@ class MapQuest(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.screen = Builder.load_file('main.kv')
-        self.dataType = 1
-    
-    def changeMetric(self,active,val):
-        if (active.stete == 1):
-            self.dataType=2
-        else:
-            self.dataType=1
-        print("HEllo", active.state)
-    
-    def calc(self,origin,destination):
-        print(f"ORIGIN: {origin} DESTINATION: {destination} ")
-        conversionFunc(origin,destination,self.dataType)
-    
+        
+    def calc(self,origin,destination,state):
+        self.screen.ids.output.ids.textoutput.text =  conversionFunc(origin,destination,state)
     def build(self):
         return self.screen
     

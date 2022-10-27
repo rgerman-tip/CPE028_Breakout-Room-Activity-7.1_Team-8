@@ -1,7 +1,31 @@
 <Output@Screen>:
     name: 'output'
-    MDLabel:
-        id: textoutput
-        text: "TESTINGS"
-        halign: "center"
-        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+    BoxLayout:
+        size_hint: .9,.75
+        pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        ScrollView:
+            MDLabel:
+                id: textoutput
+                text: "TESTINGS"
+                halign: "left"
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                adaptive_height:True
+    
+    Button:
+        id: back
+        text: 'RETURN'
+        text_color: '#ec8c6f'
+        font_name: 'Nunito'
+        font_size: '18'
+        size_hint: .25, .065
+        pos_hint: {'center_x': .5,'center_y': 0.1}
+        background_color: (0,0,0,0)
+        on_release: app.root.current = 'front'
+        canvas.before:
+            Color:
+                rgba: rgba(236,140,111,255)
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [3]
+        
