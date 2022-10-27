@@ -1,0 +1,100 @@
+<Front@Screen>:
+    name: 'front'
+    FloatLayout:
+        MDLabel:
+            text: 'MAPQUESTGUI'
+            font_size: 0.1 * self.height
+            halign: 'center'
+            font_name: 'Nunito'
+            pos_hint: {'center_x': .5,'center_y': 0.875}
+        MDLabel:
+            text: 'ORIGIN:'
+            font_size: 0.05 * self.height
+            font_name: 'Nunito'
+            halign: 'center'
+            pos_hint: {'center_x': .25,'center_y': 0.7}
+        MDLabel:
+            text: 'DESTINATION:'
+            font_size: 0.05 * self.height
+            font_name: 'Nunito'
+            halign: 'center'
+            pos_hint: {'center_x': .215,'center_y': 0.5}
+
+        CustomCard:
+            pos_hint: {'center_x': .55,'center_y': 0.7}
+            size_hint: .5, .1
+            TextInput:
+                id: Origin
+                pos_hint: {'center_x': .5,'center_y': 0.5}
+                hint_text: "Enter Origin"
+                font_name: 'Nunito'
+                font_size: .045 * root.height
+                hint_text_color: "3b4949"
+                cursor_color: "3b4949"
+                halign: "left"
+                foreground_color: "3b4949"
+                background_normal: ""
+                background_active: ""
+                background_color: (0,0,0,0)
+                multiline: False
+                padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+        CustomCard:
+            pos_hint: {'center_x': .55,'center_y': 0.5}
+            size_hint: .5, .1
+            TextInput:
+                id: Destination
+                pos_hint: {'center_x': .5,'center_y': 0.5}
+                hint_text: "Enter Destination"
+                font_name: 'Nunito'
+                font_size: .045 * root.height
+                hint_text_color: "3b4949"
+                cursor_color: "3b4949"
+                halign: "left"
+                foreground_color: "3b4949"
+                background_normal: ""
+                background_active: ""
+                background_color: (0,0,0,0)
+                multiline: False
+                padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+
+        MDLabel:
+            text: 'change to miles?'
+            font_size: 0.05 * self.height
+            font_name: 'Nunito'
+            halign: 'center'
+            pos_hint: {'center_x': .405,'center_y': 0.4}
+
+        MDCheckbox:
+            size_hint: None, None
+            size: "48dp", "48dp"
+            pos_hint: {'center_x': .53, 'center_y': .4}
+            on_active: app.changeMetric(*args)
+        
+        Button:
+            id: Calculate
+            text: 'CALCULATE'
+            text_color: '#ec8c6f'
+            font_name: 'Nunito'
+            font_size: '18'
+            size_hint: .25, .065
+            pos_hint: {'center_x': .5,'center_y': 0.25}
+            background_color: (0,0,0,0)
+            on_press: app.calc(Origin.text,Destination.text)
+            on_release: app.root.current = 'output'
+            canvas.before:
+                Color:
+                    rgba: rgba(236,140,111,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [3]
+            
+        
+<CustomCard@MDCard>:
+    md_bg_color: 0,0,0,0
+    canvas.before:
+        Color:
+            rgba: rgba(112,236,228,255)
+        Line:
+            width: 1.5
+            rounded_rectangle: self.x,self.y,self.width,self.height,3,3,3,3,100
