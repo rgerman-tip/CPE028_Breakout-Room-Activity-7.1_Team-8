@@ -10,7 +10,7 @@ key = "AyRhfyHs9PM5gRGGoct61Xt40AyL9FiY"
 url = main_api + urllib.parse.urlencode({"key":key, "from":orig, "to":dest}) 
 
 json_data = requests.get(url).json()
-print(json_data)
+print(json_data["info"])
 
 print("Done by: ZANDLEX KEANO M. CRUZ | 15-19-2022")
 
