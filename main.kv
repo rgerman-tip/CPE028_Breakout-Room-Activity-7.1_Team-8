@@ -1,0 +1,10 @@
+#:include frontscreen.kv
+#:include output.kv
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+ScreenManager:
+    transition: NoTransition()
+    Front:
+        id: front
+    Output:
+        id: output
