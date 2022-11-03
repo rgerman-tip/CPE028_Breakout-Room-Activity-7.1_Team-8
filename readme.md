@@ -10,8 +10,9 @@ The added features are:
 <ul>
     <li>KivyMD GUI integration
     <li>Meter/Miles option
+    Added CI/CD
 </ul>
 </h3>
 
 
-<h3>Added CI/CD</h3>
+
