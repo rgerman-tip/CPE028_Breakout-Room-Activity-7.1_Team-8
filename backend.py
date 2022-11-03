@@ -31,5 +31,3 @@ def conversionFunc(origin,dest,state):
     else: # output if not found
         output = "For Staus Code: " + str(json_status) + "; Refer to: \n" + "https://developer.mapquest.com/documentation/directions-api/status-codes"
     return output
-
-print(conversionFunc("Marikina","Caloocan","normal"))
