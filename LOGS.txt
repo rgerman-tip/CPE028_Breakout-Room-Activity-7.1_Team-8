@@ -1,0 +1,62 @@
+03/11/2022 15:32:21 Cleared Text Input
+03/11/2022 15:38:07 Calculated Distance From Caloocan TO Tondo
+03/11/2022 15:38:08 Exit Ouput Screen
+03/11/2022 15:40:59 Entered History Screen
+03/11/2022 15:41:25 Entered History Screen
+03/11/2022 15:41:27 Entered History Screen
+03/11/2022 15:41:28 Entered History Screen
+03/11/2022 15:41:28 Entered History Screen
+03/11/2022 15:41:28 Entered History Screen
+03/11/2022 15:41:28 Entered History Screen
+03/11/2022 15:41:28 Entered History Screen
+03/11/2022 15:41:29 Entered History Screen
+03/11/2022 15:42:04 Entered History Screen
+03/11/2022 15:42:07 Exit Recent Screen
+03/11/2022 15:42:14 Entered History Screen
+03/11/2022 15:42:15 Exit Recent Screen
+03/11/2022 15:42:20 Calculated Distance From Tondo TO Caloocan
+03/11/2022 15:42:21 Exit Ouput Screen
+03/11/2022 15:42:22 Entered History Screen
+03/11/2022 15:42:26 Exit Recent Screen
+03/11/2022 15:42:28 Opened Logs
+03/11/2022 15:42:33 Exit Logs Screen
+03/11/2022 15:42:57 Entered History Screen
+03/11/2022 15:42:59 Exit Recent Screen
+03/11/2022 15:43:00 Cleared Text Input
+03/11/2022 15:43:04 Entered History Screen
+03/11/2022 15:43:05 Exit Recent Screen
+03/11/2022 15:43:06 Entered History Screen
+03/11/2022 15:43:07 Exit Recent Screen
+03/11/2022 15:43:09 Opened Logs
+03/11/2022 15:43:12 Exit Logs Screen
+03/11/2022 15:45:54 Calculated Distance From Caloocan TO Tondo
+03/11/2022 15:45:54 Exit Ouput Screen
+03/11/2022 15:45:55 Entered History Screen
+03/11/2022 15:45:57 Exit Recent Screen
+03/11/2022 15:45:58 Cleared Text Input
+03/11/2022 15:45:59 Entered History Screen
+03/11/2022 15:46:00 Exit Recent Screen
+03/11/2022 15:46:01 Calculated Distance From  TO 
+03/11/2022 15:46:02 Exit Ouput Screen
+03/11/2022 15:46:02 Entered History Screen
+03/11/2022 15:46:04 Exit Recent Screen
+03/11/2022 15:46:05 Opened Logs
+03/11/2022 15:46:08 Exit Logs Screen
+03/11/2022 15:48:38 Calculated Distance From Tondo TO Caloocan
+03/11/2022 15:48:40 Exit Ouput Screen
+03/11/2022 15:48:42 Cleared Text Input
+03/11/2022 15:48:43 Entered History Screen
+03/11/2022 15:48:46 Exit Recent Screen
+03/11/2022 15:48:57 Calculated Distance From Makati TO Tondo
+03/11/2022 15:48:57 Exit Ouput Screen
+03/11/2022 15:48:58 Entered History Screen
+03/11/2022 15:49:00 Exit Recent Screen
+03/11/2022 15:49:11 Calculated Distance From Tondo TO Makati
+03/11/2022 15:49:13 Exit Ouput Screen
+03/11/2022 15:49:14 Entered History Screen
+03/11/2022 15:49:16 Exit Recent Screen
+03/11/2022 15:49:18 Cleared Text Input
+03/11/2022 15:49:20 Opened Logs
+03/11/2022 15:49:34 Exit Logs Screen
+03/11/2022 15:49:39 Entered History Screen
+03/11/2022 15:49:40 Exit Recent Screen

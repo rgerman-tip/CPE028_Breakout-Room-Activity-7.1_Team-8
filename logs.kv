@@ -1,6 +1,6 @@
-# Main Kivy Screen For Ouput Display
-<Output@Screen>:
-    name: 'output'
+# Main Kivy Screen For Logs Display
+<Logs@Screen>:
+    name: 'logs'
     FitImage:
         source: "mapbg.jpg"
     MDCard:
@@ -12,7 +12,7 @@
         pos_hint: {'center_x': 0.5,'center_y': 0.96}
     FloatLayout:
         MDLabel:
-            text: 'MAPQUESTGUI OUTPUT'
+            text: 'MAPQUESTGUI LOGS'
             font_size: 0.1 * self.height
             halign: 'center'
             font_name: 'Nunito'
@@ -23,8 +23,9 @@
         pos_hint: {'center_x': 0.5,'center_y': 0.475}
         ScrollView:
             MDLabel:
-                id: textoutput
-                text: "TESTINGS"
+                id: logs
+                text: "LOGS"
+                font_name: 'Nunito'
                 color: 1,1,1,1
                 halign: "left"
                 pos_hint: {'center_x': 0.5,'center_y': 0.5}
@@ -39,9 +40,9 @@
         size_hint: .25, .065
         pos_hint: {'center_x': .5,'center_y': 0.075}
         background_color: (0,0,0,0)
-        on_release:
+        on_release: 
             app.root.current = 'front'
-            app.log('Exit Ouput Screen')
+            app.log("Exit Logs Screen")
         canvas.before:
             Color:
                 rgba: rgba(236,140,111,255)

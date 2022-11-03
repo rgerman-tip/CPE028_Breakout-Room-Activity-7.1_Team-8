@@ -89,11 +89,57 @@
             text_color: '#ec8c6f'
             font_name: 'Nunito'
             font_size: '18'
-            size_hint: .25, .065
+            size_hint: .225, .065
             pos_hint: {'center_x': .5,'center_y': 0.25}
             background_color: (0,0,0,0)
-            on_press: app.calc(Origin.text,Destination.text,box.state)
+            on_press: 
+                app.calc(Origin.text,Destination.text,box.state)
+                app.openLogs()
+                app.log(f"Calculated Distance From {Origin.text.capitalize()} TO {Destination.text.capitalize()}")
             on_release: app.root.current = 'output'
+            canvas.before:
+                Color:
+                    rgba: rgba(236,140,111,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [3]
+
+        Button:
+            id: clear
+            text: 'CLEAR ALL'
+            text_color: '#ec8c6f'
+            font_name: 'Nunito'
+            font_size: '18'
+            size_hint: .225, .065
+            pos_hint: {'center_x': .75,'center_y': 0.25}
+            background_color: (0,0,0,0)
+            on_press: 
+                app.clear()
+                app.log("Cleared Text Input")
+            canvas.before:
+                Color:
+                    rgba: rgba(236,140,111,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [3]
+        
+        Button:
+            id: history
+            text: 'HISTORY'
+            text_color: '#ec8c6f'
+            font_name: 'Nunito'
+            font_size: '18'
+            size_hint: .225, .065
+            pos_hint: {'center_x': .25,'center_y': 0.25}
+            background_color: (0,0,0,0)
+            on_press: 
+                app.recent(Origin.text.capitalize(),Destination.text.capitalize())
+                app.history()
+                app.log("Entered History Screen")
+            on_release:
+                app.root.current = 'recent'
             canvas.before:
                 Color:
                     rgba: rgba(236,140,111,255)
@@ -116,6 +162,16 @@
             halign: 'center'
             color: 1,1,1,1
             pos_hint: {'center_x': .5,'center_y': 0.075}
+        MDTextButton:
+            text: "View Logs"
+            font_name: 'Nunito'
+            color: "white"
+            pos_hint: {'right': .99,'y': 0}
+            on_press: 
+                app.root.current = 'logs'
+                app.log("Opened Logs")
+            on_release:
+                app.openLogs()
         
 <CustomCard@MDCard>:
     md_bg_color: 0,0,0,0
