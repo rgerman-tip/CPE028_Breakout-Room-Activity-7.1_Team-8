@@ -1,5 +1,5 @@
 import unittest
-import mapquest_gui as mg
+import backend as mg
 
 class testMapQuest(unittest.TestCase):
     print('[Running Test Cases]\n')
