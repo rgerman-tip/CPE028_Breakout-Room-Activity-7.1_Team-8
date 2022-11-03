@@ -18,6 +18,3 @@ class testMapQuest(unittest.TestCase):
         self.assertIsNotNone(convert)
         print(f"[Check API Call Tokyo To Kyoto]")
 
-    def test_gui(self):
-        self.assertIsNotNone(mg.MapQuest)
-        print("[Check GUI Initialization]")
