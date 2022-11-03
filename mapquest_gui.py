@@ -3,6 +3,7 @@ from kivy.lang import Builder
 from kivy.core.text import LabelBase
 import urllib.parse
 import requests
+from datetime import datetime
 
 # Accessing the API with a key
 main_api = "https://www.mapquestapi.com/directions/v2/route?" 
@@ -12,7 +13,7 @@ key = "AyRhfyHs9PM5gRGGoct61Xt40AyL9FiY"
 # Conversion Function Based On The Lab Activity MapQuest 7.1
 def conversionFunc(origin,dest,state):
     url = main_api + urllib.parse.urlencode({"key": key, "from":origin, "to":dest})
-    print("URL: " + (url))
+    # print("URL: " + (url))
     json_data = requests.get(url).json()
     json_status = json_data["info"]["statuscode"]
     temp = []
@@ -44,11 +45,40 @@ class MapQuest(MDApp): # Kivy Main Class For The GUI
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.screen = Builder.load_file('main.kv')
+        self.read_object = open('LOGS.txt', 'r')
+        self.logs = self.read_object.read()
+        self.read_object2 = open('recent.txt', 'r')
+        self.recentlist = self.read_object2.read()
         
     def calc(self,origin,destination,state):
-        self.screen.ids.output.ids.textoutput.text =  conversionFunc(origin,destination,state)
+        self.screen.ids.output.ids.textoutput.text = conversionFunc(origin,destination,state)
         # Grabing the inputs from the text fields
-        
+    
+    def log(self,message):
+        now = datetime.now()
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        file_object = open('LOGS.txt', 'a')
+        file_object.write(f"{dt_string} {message}\n")
+    
+    def openLogs(self):
+        self.read_object = open('LOGS.txt', 'r')
+        self.logs = self.read_object.read()
+        self.screen.ids.logs.ids.logs.text = self.logs
+    
+    def recent(self,o,d):
+        file_object = open('recent.txt', 'a')
+        if d != '' and o != '':
+            file_object.write(f"{o} To {d}\n")
+    
+    def history(self):
+        self.read_object2 = open('recent.txt', 'r')
+        self.recentlist = self.read_object2.read()
+        self.screen.ids.recent.ids.recent.text = self.recentlist
+    
+    def clear(self):
+        self.screen.ids.front.ids.Destination.text = ""
+        self.screen.ids.front.ids.Origin.text = ""
+
     def build(self):
         return self.screen
     

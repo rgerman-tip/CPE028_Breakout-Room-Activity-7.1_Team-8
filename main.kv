@@ -1,5 +1,7 @@
 #:include frontscreen.kv
 #:include output.kv
+#:include logs.kv
+#:include recent.kv
 #:import NoTransition kivy.uix.screenmanager.NoTransition
 
 ScreenManager:
@@ -8,3 +10,7 @@ ScreenManager:
         id: front
     Output:
         id: output
+    Logs:
+        id: logs
+    Recent:
+        id: recent
