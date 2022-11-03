@@ -32,13 +32,13 @@ class testMapQuest(unittest.TestCase):
         self.assertIsNotNone(convert)
         print(f"[Check API Call New York To Los Angeles converted to miles]")
         print("\n\n")
-    def test_empty_input(self):
-        convert = mg.conversionFunc('','','down')
-        self.assertIsNotNone(convert)
-        print(f"[Check API Call with no input]")
-        print("\n\n")
-    def test_wrong_input(self):
-        convert = mg.conversionFunc('thisisnotaplace','aplacethatdoesnotexist','down')
-        self.assertIsNotNone(convert)
-        print(f"[Check API Call with Wrong input]")
-        print("\n\n")
+    # def test_empty_input(self):
+    #     convert = mg.conversionFunc('','','down')
+    #     self.assertIsNotNone(convert)
+    #     print(f"[Check API Call with no input]")
+    #     print("\n\n")
+    # def test_wrong_input(self):
+    #     convert = mg.conversionFunc('thisisnotaplace','aplacethatdoesnotexist','down')
+    #     self.assertIsNotNone(convert)
+    #     print(f"[Check API Call with Wrong input]")
+    #     print("\n\n")
